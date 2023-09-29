@@ -1,6 +1,6 @@
 [core]
     remote = ssh-storage
-['remote "storage"']
+['remote "ssh-storage"']
     url = ssh://data-srv@192.168.64.11/opt/datasets
     password = 1111
     user = mlops

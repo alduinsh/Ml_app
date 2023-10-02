@@ -1,0 +1,5 @@
+dvc[ssh]
+pandas
+scikit-learn
+scipy
+matplotlib

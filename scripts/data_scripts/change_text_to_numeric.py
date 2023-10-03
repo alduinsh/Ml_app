@@ -2,6 +2,7 @@
 import sys
 import os
 import io
+from sklearn.preprocessing import LabelEncoder
 
 if len(sys.argv) != 2:
     sys.stderr.write("Arguments error. Usage:\n")
@@ -41,7 +42,10 @@ def process_data(fd_in, fd_out):
         elif arr_experience_level[i] == 'EN':
             arr_experience_level[i] = 1        
         else:
-            arr_experience_level[i] = 0           
+            arr_experience_level[i] = 0 
+        
+    label_encoder = LabelEncoder()
+    arr_job_title = label_encoder.fit_transform(arr_job_title)          
 
     for p_experience_level, p_job_title, p_salary_in_usd, p_company_size in zip(arr_experience_level, arr_job_title, arr_salary_in_usd, arr_company_size):
         fd_out.write("{},{},{},{}\n".format(p_experience_level, p_job_title, p_salary_in_usd, p_company_size))

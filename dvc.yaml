@@ -20,3 +20,10 @@ stages:
     - scripts/data_scripts/change_text_to_numeric.py
     outs:
     - data/stage3
+  split:
+    cmd: python3 scripts/data_scripts/train_test_split.py data/stage3/train.csv
+    deps:
+    - data/stage3/train.csv
+    - scripts/data_scripts/train_test_split.py
+    outs:
+    - data/stage4

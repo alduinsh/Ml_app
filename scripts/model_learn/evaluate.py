@@ -12,8 +12,8 @@ if len(sys.argv) != 3:
     sys.exit(1)
 
 df = pd.read_csv(sys.argv[1])
-X = df[['p_experience_level', 'p_job_title', 'p_company_size']]
-y = df['p_salary_in_usd']
+X = df.iloc[:,[0,1,3]]
+y = df.iloc[:,2]
 
 with open(sys.argv[2], "rb") as fd:
     clf = pickle.load(fd)

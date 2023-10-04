@@ -3,4 +3,4 @@ split:
 train:
   seed: 42
   normalize: true
- 
+  max_depth: 4

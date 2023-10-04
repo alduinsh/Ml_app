@@ -24,7 +24,7 @@ def process_data(fd_in, fd_out):
         arr_job_title.append(line[1])
         arr_company_size.append(line[3])
 
-        if line[2] and line[2].isdigit():
+        if line[2] and line[2].isdigit() and int(line[2]) <= 300000:
             arr_salary_in_usd.append(int(line[2]))
         else:
             arr_salary_in_usd.append(0)

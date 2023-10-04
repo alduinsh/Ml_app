@@ -30,13 +30,13 @@ stages:
   train:
     cmd: python3 scripts/model_learn/dt.py data/stage4/train.csv model.pkl
     deps:
-    - data/stage4/train.csv
-    - scripts/model_learn/dt.py
+      - data/stage4/train.csv
+      - scripts/model_learn/dt.py
     params:
-    - train.max_depth
-    - train.seed
+      - train.seed
+      - train.normalize
     outs:
-    - models/model.pkl
+      - models/model.pkl
   evaluate:
     cmd: python3 scripts/model_learn/evaluate.py data/stage4/test.csv models/model.pkl
     deps:

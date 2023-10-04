@@ -27,3 +27,13 @@ stages:
     - scripts/data_scripts/train_test_split.py
     outs:
     - data/stage4
+  train:
+    cmd: python3 scripts/model_learn/dt.py data/stage4/train.csv model.pkl
+    deps:
+    - data/stage4/train.csv
+    - scripts/model_learn/dt.py
+    params:
+    - train.max_depth
+    - train.seed
+    outs:
+    - models/model.pkl

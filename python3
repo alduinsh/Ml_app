@@ -1,0 +1,9 @@
+Added stage 'split1' in 'dvc.yaml'
+
+To track the changes with git, run:
+
+	git add dvc.yaml
+
+To enable auto staging, run:
+
+	dvc config core.autostage true

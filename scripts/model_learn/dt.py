@@ -9,7 +9,7 @@ from sklearn.linear_model import LinearRegression
 
 if len(sys.argv) != 3:
     sys.stderr.write("Arguments error. Usage:\n")
-    sys.stderr.write("\tpython lr.py data-file model \n")
+    sys.stderr.write("\tpython dt.py data-file model \n")
     sys.exit(1)
 
 f_input = sys.argv[1]
@@ -26,8 +26,8 @@ X = df.iloc[:,[0,1,3]]
 y = df.iloc[:,2]
 
 
-if normalize:
-    X = (X - X.mean()) / X.std()
+#if normalize:
+    #X = (X - X.mean()) / X.std()
 
 clf = LinearRegression()
 clf.fit(X, y)

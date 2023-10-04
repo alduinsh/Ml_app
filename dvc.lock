@@ -77,8 +77,8 @@ stages:
       size: 33122
     - path: scripts/model_learn/dt.py
       hash: md5
-      md5: 5d62d378b666579130919d9b30e9446b
-      size: 738
+      md5: 0bd016e3989179e9f441d9e237a6fe22
+      size: 740
     params:
       params.yaml:
         train.normalize: true
@@ -86,7 +86,7 @@ stages:
     outs:
     - path: models/model.pkl
       hash: md5
-      md5: b9dd1e82cf58c5233a7516cbc52484a4
+      md5: 9fbd7b050f9f4d35f1190b5067182aac
       size: 576
   evaluate:
     cmd: python3 scripts/model_learn/evaluate.py data/stage4/test.csv models/model.pkl
@@ -97,7 +97,7 @@ stages:
       size: 14212
     - path: models/model.pkl
       hash: md5
-      md5: b9dd1e82cf58c5233a7516cbc52484a4
+      md5: 9fbd7b050f9f4d35f1190b5067182aac
       size: 576
     - path: scripts/model_learn/evaluate.py
       hash: md5
@@ -106,5 +106,5 @@ stages:
     outs:
     - path: evaluate/metrics.json
       hash: md5
-      md5: 71bdff81a54d2b4bc2e2fd0f9436111b
-      size: 82
+      md5: 1580cbd6d58073bedb0568e5ae968684
+      size: 79

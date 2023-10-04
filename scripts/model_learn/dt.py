@@ -21,8 +21,10 @@ p_seed = params["seed"]
 normalize = params["normalize"]
 
 df = pd.read_csv(f_input)
-X = df.iloc[:, [0, 1, 3]]
-y = df.iloc[:, 2]
+
+X = df.iloc[:,[0,1,3]]
+y = df.iloc[:,2]
+
 
 if normalize:
     X = (X - X.mean()) / X.std()

@@ -5,6 +5,7 @@ import json
 
 import pandas as pd
 from sklearn.linear_model import LinearRegression
+from sklearn.metrics import mean_absolute_error, mean_squared_error
 
 if len(sys.argv) != 3:
     sys.stderr.write("Arguments error. Usage:\n")
@@ -12,16 +13,20 @@ if len(sys.argv) != 3:
     sys.exit(1)
 
 df = pd.read_csv(sys.argv[1])
+
 X = df.iloc[:,[0,1,3]]
 y = df.iloc[:,2]
+
 
 with open(sys.argv[2], "rb") as fd:
     clf = pickle.load(fd)
 
-score = clf.score(X, y)
+y_pred = clf.predict(X)
+mae = mean_absolute_error(y, y_pred)
+mse = mean_squared_error(y, y_pred)
+rmse = mean_squared_error(y, y_pred, squared=False)
 
-prc_file = os.path.join("evaluate", "score.json")
-os.makedirs(os.path.join("evaluate"), exist_ok=True)
+metrics_file = os.path.join("evaluate", "metrics.json")
 
-with open(prc_file, "w") as fd:
-    json.dump({"score": score}, fd)
+with open(metrics_file, "w") as fd:
+    json.dump({"MAE": mae, "MSE": mse, "RMSE": rmse}, fd)

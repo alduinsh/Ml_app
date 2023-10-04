@@ -77,8 +77,8 @@ stages:
       size: 28814
     - path: scripts/model_learn/dt.py
       hash: md5
-      md5: e00e55c0b3cf6effc3e7f102fe9f9e20
-      size: 740
+      md5: 5d62d378b666579130919d9b30e9446b
+      size: 738
     params:
       params.yaml:
         train.normalize: true
@@ -101,10 +101,10 @@ stages:
       size: 576
     - path: scripts/model_learn/evaluate.py
       hash: md5
-      md5: cb7dcf0d8270abb1b2936b6b99ba225a
-      size: 603
+      md5: fbc71136fbd252a6b551f8a8281ceb56
+      size: 777
     outs:
-    - path: evaluate/score.json
+    - path: evaluate/metrics.json
       hash: md5
-      md5: 12cb091256b684a92608ebe1a54bfe27
-      size: 28
+      md5: 04d1b8432f42e24cd962a51d41f32ef1
+      size: 82

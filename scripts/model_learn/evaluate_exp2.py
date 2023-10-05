@@ -1,4 +1,3 @@
-
 #!/usr/bin/env python3
 import os
 import sys
@@ -6,7 +5,7 @@ import pickle
 import json
 
 import pandas as pd
-from sklearn.linear_model import LinearRegression
+from sklearn.tree import DecisionTreeRegressor
 from sklearn.metrics import mean_absolute_error, mean_squared_error
 
 if len(sys.argv) != 3:
@@ -16,9 +15,8 @@ if len(sys.argv) != 3:
 
 df = pd.read_csv(sys.argv[1])
 
-X = df.iloc[:,[0,1,3]]
-y = df.iloc[:,2]
-
+X = df.iloc[:, [0, 1, 3]]
+y = df.iloc[:, 2]
 
 with open(sys.argv[2], "rb") as fd:
     clf = pickle.load(fd)

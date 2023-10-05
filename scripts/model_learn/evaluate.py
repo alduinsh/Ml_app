@@ -1,4 +1,4 @@
-"""
+
 #!/usr/bin/env python3
 import os
 import sys
@@ -32,6 +32,7 @@ metrics_file = os.path.join("evaluate", "metrics.json")
 
 with open(metrics_file, "w") as fd:
     json.dump({"MAE": mae, "MSE": mse, "RMSE": rmse}, fd)
+
 """
 #!/usr/bin/env python3
 import os
@@ -66,3 +67,5 @@ os.makedirs(os.path.join("evaluate"), exist_ok=True)
 
 with open(metrics_file, "w") as fd:
     json.dump({"MAE": mae, "MSE": mse, "RMSE": rmse}, fd)
+
+"""

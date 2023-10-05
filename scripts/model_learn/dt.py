@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-'''import sys
+import sys
 import os
 import yaml
 import pickle
@@ -33,7 +33,9 @@ clf = LinearRegression()
 clf.fit(X, y)
 
 with open(f_output, "wb") as fd:
-    pickle.dump(clf, fd) '''
+    pickle.dump(clf, fd) 
+    
+    '''
 
 #!/usr/bin/env python3
 import sys
@@ -68,3 +70,4 @@ clf.fit(X, y)
 with open(f_output, "wb") as fd:
     pickle.dump(clf, fd)
 
+'''

@@ -6,7 +6,7 @@ import pickle
 import json
 
 import pandas as pd
-from sklearn.tree import DecisionTreeRegressor
+from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_absolute_error, mean_squared_error
 
 if len(sys.argv) != 3:
@@ -19,6 +19,7 @@ df = pd.read_csv(sys.argv[1])
 X = df.iloc[:,[0,1,3]]
 y = df.iloc[:,2]
 
+
 with open(sys.argv[2], "rb") as fd:
     clf = pickle.load(fd)
 
@@ -28,8 +29,8 @@ mse = mean_squared_error(y, y_pred)
 rmse = mean_squared_error(y, y_pred, squared=False)
 
 metrics_file = os.path.join("evaluate", "metrics.json")
-os.makedirs(os.path.join("evaluate"), exist_ok=True)
 
 with open(metrics_file, "w") as fd:
     json.dump({"MAE": mae, "MSE": mse, "RMSE": rmse}, fd)
+
 

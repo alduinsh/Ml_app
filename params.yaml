@@ -2,5 +2,7 @@ split:
   split_ratio: 0.3
 train:
   seed: 42
-  normalize: true
-  max_depth: 4
+  min_samples_split: 30
+  normalize: false
+  max_depth: 10
+  splitter: best

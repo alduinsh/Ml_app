@@ -7,7 +7,6 @@ import pandas as pd
 from sklearn.tree import DecisionTreeRegressor
 from sklearn.linear_model import LinearRegression
 
-
 if len(sys.argv) != 4:
     sys.stderr.write("Arguments error. Usage:\n")
     sys.stderr.write("\tpython train.py data-file model algo\n")
